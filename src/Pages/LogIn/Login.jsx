@@ -12,6 +12,13 @@ const Login = () => {
   const location = useLocation();
 
   const [error, setError] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+    setEmail(event.target.checked ? "admintest@gmail.com" : "test@gmail.com");
+  };
 
   const from = location.state?.from?.pathname || "/";
   const {
@@ -49,22 +56,25 @@ const Login = () => {
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
+
                   <input
                     {...register("email", { required: true })}
                     type="email"
                     placeholder="email"
                     className="input input-bordered"
-                    defaultValue="test@gmail.com"
+                    defaultValue={email}
                   />
-                  {errors.email && (
+
+                  {/* {errors.email && (
                     <span className="text-red-600">This field is required</span>
-                  )}
+                  )} */}
                 </div>
 
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
+
                   <input
                     {...register("password", { required: true })}
                     type="password"
@@ -89,6 +99,18 @@ const Login = () => {
                         Signup
                       </Link>
                     </p>
+                  </div>
+                  <div className=" mt-5">
+                    <label>
+                      <span className="mr-2 ">
+                        Want to log in as an admin to observe?
+                      </span>
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                      />
+                    </label>
                   </div>
                 </div>
               </div>

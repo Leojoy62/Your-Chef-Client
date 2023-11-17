@@ -81,42 +81,47 @@ const ContactUs = () => {
           heading={"Contact Form"}
         ></SectionHeader>
       </div>
-      <div className="bg-img-contact p-10 my-10 flex flex-col justify-center">
-        <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
-          <input
-            className="p-4"
-            placeholder="Your Email"
-            type="email"
-            name="from"
-            value={formData.from}
-            onChange={handleChange}
-            required
-          />
-          <br />
-          <input
-            className="p-4"
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-          />
-          <br />
-          <textarea
-            className="h-52"
-            name="message"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <br />
-          <button className="btn text-white bg-black border-0 uppercase hover:bg-gray-700">
-            Send Message{" "}
-            <FaTelegram className="text-orange-700 text-2xl"></FaTelegram>
-          </button>
-        </form>
+      <div className="bg-img-contact p-10 my-10">
+        <div className="items-center flex flex-col justify-center">
+          <form
+            className="flex flex-col justify-center w-1/2"
+            onSubmit={handleSubmit}
+          >
+            <input
+              className="p-4 rounded-input"
+              placeholder="Your Email"
+              type="email"
+              name="from"
+              value={formData.from}
+              onChange={handleChange}
+              required
+            />
+            <br />
+            <input
+              className="p-4 rounded-input"
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+            <br />
+            <textarea
+              className="h-52 rounded-input"
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+            <br />
+            <button className="btn text-white bg-black border-0 uppercase hover:bg-gray-700">
+              Send Message{" "}
+              <FaTelegram className="text-orange-700 text-2xl"></FaTelegram>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

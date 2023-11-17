@@ -9,6 +9,7 @@ const Header = () => {
   const [isAdmin] = useAdmin();
   const [, cart] = useCart();
   const { user } = useContext(AuthContext);
+
   const NavItems = (
     <>
       <li>
